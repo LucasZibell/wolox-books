@@ -1,23 +1,22 @@
-<template>
-  <div class="hello">
-    <form @submit.prevent="signUp">
-      <h3>First Name</h3>
-      <input v-model="name">
-      <h3>Last Name</h3>
-      <input v-model="surname">
-      <h3>Email</h3>
-      <input v-model="email">
-      <h4 v-show="submitStatus && !$v.email.required">Mete un nombre gil</h4>
-      <h3>Password</h3>
-      <input v-model="password">
-      <h4 v-show="submitStatus && !$v.password.required">Mete una contraseña gil</h4>
-      <h3></h3>
-      <button class="submit-button">Sign Up</button>
-    </form>
-  </div>
+<template lang='pug'>
+  div(class="hello")
+    form(@submit.prevent="signUp")
+      h3 First Name
+      input(v-model="name")
+      h3 Last Name
+      input(v-model="surname")
+      h3 Email
+      input(v-model="email")
+      h4(v-show="submitStatus && !$v.email.required") Mete un nombre gil
+      h3 Password
+      input(v-model="password")
+      h4(v-show="submitStatus && !$v.password.required") Mete una contraseña gil
+      h3
+      button(class="submit-button") Sign Up
 </template>
 
 <script>
+
 import { required } from 'vuelidate/lib/validators'
 
 export default {
