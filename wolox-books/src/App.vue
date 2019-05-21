@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Sign up</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
@@ -25,5 +25,19 @@
       color: #42b983;
     }
   }
+}
+
+.submit-button {
+  width: 80px;
+  height: 30px;
+  color: white;
+  background-color: green;
+  border-radius: 10px;
+  transition: background 0.2s ease-in-out;
+
+  &:active {
+    background-color: goldenrod;
+  }
+
 }
 </style>
