@@ -1,11 +1,7 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Sign up</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<template lang='pug'>
+  div(id="app")
+    div(id="nav")
+    router-view
 </template>
 
 <style lang="scss">
@@ -38,6 +34,15 @@
   &:active {
     background-color: goldenrod;
   }
-
 }
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+}
+
 </style>

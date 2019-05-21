@@ -1,8 +1,7 @@
-<template>
-  <div class="signUp">
-    <img alt="Vue logo" src="../assets/company.png">
-    <Form msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang='pug'>
+  div(class="signUp")
+    img(alt="Vue logo" src="../assets/company.png")
+    Form
 </template>
 
 <script>

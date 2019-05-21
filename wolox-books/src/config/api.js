@@ -1,5 +1,5 @@
 import { create } from 'apisauce'
 
 export const api = create({
-  baseURL: 'https://wbooks-api-stage.herokuapp.com/api/v1'
+  baseURL: 'http://polls.apiblueprint.org/api/v1'
 })

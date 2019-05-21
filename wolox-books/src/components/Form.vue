@@ -12,13 +12,15 @@
       input(type="password" v-model="password")
       h4(v-show="submitStatus && !$v.password.required") Mete una contraseña gil
       h3
-      button(class="submit-button") Sign Up
+      div(class="column center")
+        button(class="submit-button") Sign Up
+        button(class="login-button" @click="goToLogin") Login
 </template>
 
 <script>
 
 import { required } from 'vuelidate/lib/validators'
-import { books } from '../service/booksService'
+import { createUser } from '../service/userService'
 
 export default {
   name: 'Form',
@@ -48,15 +50,21 @@ export default {
       if (this.$v.$invalid) {
         this.submitStatus = 'ERROR'
       } else {
-        const response = await books();
-        console.log({
-          response,
-          name: this.name,
-          surname: this.surname,
+        const body = {
+          first_name: this.name,
+          last_name: this.surname,
           email: this.email,
-          password: this.password
-        })
+          password: this.password,
+          password_confirmation: this.password,
+          locale: 'en'
+        }
+        const response = await createUser();
+        console.log(response)
+        this.$router.push('/login')
       }
+    },
+    goToLogin() {
+      this.$router.push('/login')
     }
   }
 }
@@ -78,4 +86,12 @@ li {
 a {
   color: #42b983;
 }
+
+.login-button {
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  border-color: gold;
+}
+
 </style>
