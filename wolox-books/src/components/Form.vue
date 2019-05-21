@@ -9,7 +9,7 @@
       input(v-model="email")
       h4(v-show="submitStatus && !$v.email.required") Mete un nombre gil
       h3 Password
-      input(v-model="password")
+      input(type="password" v-model="password")
       h4(v-show="submitStatus && !$v.password.required") Mete una contraseña gil
       h3
       button(class="submit-button") Sign Up
@@ -18,6 +18,7 @@
 <script>
 
 import { required } from 'vuelidate/lib/validators'
+import { books } from '../service/booksService'
 
 export default {
   name: 'Form',
@@ -42,12 +43,14 @@ export default {
     }
   },
   methods: {
-    signUp() {
+    async signUp() {
       this.$v.$touch()
       if (this.$v.$invalid) {
         this.submitStatus = 'ERROR'
       } else {
+        const response = await books();
         console.log({
+          response,
           name: this.name,
           surname: this.surname,
           email: this.email,
