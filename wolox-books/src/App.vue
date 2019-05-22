@@ -23,6 +23,10 @@
   }
 }
 
+button {
+  cursor: pointer;
+}
+
 .submit-button {
   width: 80px;
   height: 30px;

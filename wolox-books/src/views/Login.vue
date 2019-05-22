@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     goToSignUp() {
-      this.$router.push('/')
+      this.$router.push('/signUp')
     },
     async login() {
       this.$v.$touch()
@@ -50,7 +50,8 @@ export default {
           password: this.password,
         }
         const response = await login();
-        console.log(response)
+        window.localStorage.setItem('token', 1);
+        this.$router.push('/')
       }
     }
   }
