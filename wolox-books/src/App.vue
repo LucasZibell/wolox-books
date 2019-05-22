@@ -36,6 +36,13 @@
   }
 }
 
+.login-button {
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  border-color: gold;
+}
+
 .column {
   display: flex;
   flex-direction: column;

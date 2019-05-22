@@ -14,7 +14,7 @@
       h3
       div(class="column center")
         button(class="submit-button") Sign Up
-        button(class="login-button" @click="goToLogin") Login
+        button(class="login-button" type="butto" @click="goToLogin") Login
 </template>
 
 <script>
@@ -85,13 +85,6 @@ li {
 }
 a {
   color: #42b983;
-}
-
-.login-button {
-  width: 80px;
-  height: 40px;
-  border-radius: 10px;
-  border-color: gold;
 }
 
 </style>
