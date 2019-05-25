@@ -1,20 +1,20 @@
 <template lang='pug'>
   div(class="hello")
     form(@submit.prevent="signUp")
-      h3 First Name
+      h3 {{ $t('firstName') }}
       input(v-model="name")
-      h3 Last Name
+      h3 {{ $t('lastName') }}
       input(v-model="surname")
-      h3 Email
+      h3 {{ $t('email') }}
       input(v-model="email")
       h4(v-show="submitStatus && !$v.email.required") Mete un nombre gil
-      h3 Password
+      h3 {{ $t('password') }}
       input(type="password" v-model="password")
       h4(v-show="submitStatus && !$v.password.required") Mete una contraseña gil
       h3
       div(class="column center")
-        button(class="submit-button") Sign Up
-        button(class="login-button" type="butto" @click="goToLogin") Login
+        button(class="submit-button") {{ $t('signUp') }}
+        button(class="login-button" type="butto" @click="goToLogin") {{ $t('login') }}
 </template>
 
 <script>
