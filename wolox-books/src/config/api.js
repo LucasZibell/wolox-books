@@ -1,5 +1,6 @@
 import { create } from 'apisauce'
 
 export const api = create({
-  baseURL: 'https://polls.apiblueprint.org/api/v1'
+  baseURL: 'https://wbooks-api-stage.herokuapp.com/api/v1',
+  headers: { Authorization: window.localStorage.getItem('token') }
 })

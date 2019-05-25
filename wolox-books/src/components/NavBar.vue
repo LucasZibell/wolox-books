@@ -26,6 +26,7 @@ export default {
   display: flex;
   justify-content: flex-end;
   padding: 10px;
+  margin-bottom: 20px;
   box-shadow: 5px 11px 10px -9px rgba(0, 0, 0, 0.75);
   border-top: 5px solid blue;
 }

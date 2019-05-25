@@ -1,17 +1,29 @@
 <template lang='pug'>
-  NavBar
+  div
+    NavBar
+    BookList
 </template>
 
 <script>
 // @ is an alias to /src
+import { mapActions } from 'vuex'
+
 import NavBar from '@/components/NavBar.vue';
+import BookList from '@/components/BookList.vue';
 
 export default {
   name: 'home',
     components: {
-    NavBar
+    NavBar,
+    BookList
+  },
+  mounted() {
+    this.books()
   },
   methods: {
+    ...mapActions([
+      'books'
+    ])
   }
 }
 </script>

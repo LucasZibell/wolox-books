@@ -18,6 +18,7 @@
 // @ is an alias to /src
 import { required } from 'vuelidate/lib/validators'
 import { login } from '../service/userService'
+import { api } from '../config/api'
 
 export default {
   name: 'login',
@@ -49,9 +50,12 @@ export default {
           email: this.email,
           password: this.password,
         }
-        const response = await login();
-        window.localStorage.setItem('token', 1);
-        this.$router.push('/')
+        const response = await login(body);
+        if(response.data) {
+          window.localStorage.setItem('token', response.data.access_token);
+          api.setHeader('Authorization', response.data.access_token)
+          this.$router.push('/')
+        }
       }
     }
   }

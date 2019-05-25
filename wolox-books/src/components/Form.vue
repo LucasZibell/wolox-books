@@ -58,7 +58,7 @@ export default {
           password_confirmation: this.password,
           locale: 'en'
         }
-        const response = await createUser();
+        const response = await createUser(body);
         console.log(response)
         this.$router.push('/login')
       }
