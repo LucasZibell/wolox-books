@@ -1,0 +1,8 @@
+{
+  "firstName": "Primer Nombre",
+  "lastName": "Apellido",
+  "email": "Email",
+  "password": "Contraseña",
+  "signUp": "Suscribirse",
+  "login": "Ingresar"
+}

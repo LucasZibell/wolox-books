@@ -1,5 +1,5 @@
 <template lang='pug'>
-  div
+  transition(name="slide-fade")
     h3(v-if="bookInfoLoading") Cargando
     div(v-else)
       img(:src="bookInfo.image_url")
@@ -37,5 +37,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
 
 </style>
